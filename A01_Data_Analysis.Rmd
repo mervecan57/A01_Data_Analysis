@@ -1,7 +1,7 @@
 ---
 title: "Portfoliomanagement and Financial Analysis - Assignment 1"
 subtitle: "Submit until Monday 2020-09-21, 13:00"
-author: "Lastname, Surname"
+author: "Can, Merve"
 output: html_notebook
 ---
 
@@ -15,10 +15,43 @@ For all exercises please refer to my book [Tidy Portfoliomanagement in R](https:
 ## Exercise 1: xts
 
 Create a daily time series for `r lubridate::year(Sys.time())`:
+```{r}
+lubridate::year(Sys.time()) # to find out the year
+
+seq(as.Date("2020-01-01"), length=365, by="day") 
+
+timeSequence(from = "2020-01-01", to = "2020-12-31", by = "day")
+
+dates1 <- seq(as.Date("2020-01-01"), length=365, by="day")
+
+dates2 <- timeSequence(from = "2020-01-01", to = "2020-12-31", by = "day")
+```
+
+
+
 
 1. Find the subset of first and last days per month/quarter (uniquely)
+
+seq(as.Date("2020-01-01"), length=12, by="month") 
+
+timeSequence(from = "2020-01-01", to = "2020-12-31", by = "month")
+
+dates3 <- seq(as.Date("2020-01-01"), length=12, by="month")
+
+dates4 <- timeSequence(from = "2020-01-01", to = "2020-12-31", by = "month")
+
+
+
+
 2. Take December `r lubridate::year(Sys.time())-1` and remove all weekends and holidays in Zurich (Tokyo)
+
+
+
 3. create a series of five dates & times in New York. Show them for New York, London and Belgrade
+
+
+
+
 
 
 ## Exercise 2: Download Financial Data and Merge
@@ -81,5 +114,4 @@ table.CAPM
 ## Exercise 5: Performance Analysis
 
 Create multiple portfolios using `tq_portfolio()` (e.g. an equally weighted one, a market-value weighted one, and one where you create a trading strategy according to your liking). DO a performance analysis a la `vignette("TQ05-performance-analysis-with-tidyquant")`.
-
 
